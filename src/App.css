@@ -530,6 +530,7 @@ body {
 }
 
 
+
 @media screen and (min-width: 768px) {
   #hourly-forecast {
     padding-bottom: 10px;
@@ -555,6 +556,33 @@ body {
   
   /* Handle on hover */
   #hourly-forecast::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+  #hourly-forecast {
+    padding-bottom: 10px;
+  }
+
+  #detail::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  #detail::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+  }
+  
+  /* Track */
+  #detail::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0)
+  }
+   
+  /* Handle */
+  #detail::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  #detail::-webkit-scrollbar-thumb:hover {
     background: #555; 
   }
 }

@@ -37,7 +37,7 @@ const Detail = () => {
     return (
         <>
             {current && forecastToday && location &&
-                <div className="d-block weather-box overview modal-body" style={{ marginBottom: "0px", overflowX: "hidden" }} >
+                <div className="d-block weather-box overview modal-body" id="detail" style={{ marginBottom: "0px", overflowX: "hidden" }} >
                     <div className="d-flex ">
                         <h1 style={{ fontSize: "20px", fontWeight: "bold" }}>Weather Today in {location.name}, {location.country}</h1>
                     </div>
