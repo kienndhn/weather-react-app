@@ -10,7 +10,7 @@ export const getData = (q) => async (dispatch) => {
                 // Authorization: `${userInfo.token_type} ${userInfo.access_token}`
             }
         }
-        const { data } = await axios.get(`http://api.weatherapi.com/v1/forecast.json?key=0d51b511bb5946d8852154552212908&q=${q}&days=5&aqi=yes`)
+        const { data } = await axios.get(`https://api.weatherapi.com/v1/forecast.json?key=0d51b511bb5946d8852154552212908&q=${q}&days=5&aqi=yes`)
         dispatch({
             type: "GET_DATA_SUCCESS",
             payload: data
