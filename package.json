@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "proxy": "http://api.weatherapi.com/v1/",
   "private": true,
-  "homepage": "https://github.com/kienndhn/weather-app-react",
+  "homepage": "https://kienndhn.github.io/weather-react-app",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
