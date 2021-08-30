@@ -37,7 +37,7 @@ const App = () => {
   return (
     <>
       <HashRouter basename="/">
-        <BrowserRouter>
+        {/* <BrowserRouter> */}
           {/* <Switch> */}
             <div className="container pt-4 d-flex flex-column" id="main-container">
               <Header />
@@ -47,7 +47,7 @@ const App = () => {
             </div>
           {/* </Switch> */}
           <Modal />
-        </BrowserRouter>
+        {/* </BrowserRouter> */}
       </HashRouter>
     </>
   )
