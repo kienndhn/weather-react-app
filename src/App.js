@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import React, { useEffect, useState } from "react";
-import { Route, BrowserRouter } from "react-router-dom"
+import { Route, BrowserRouter, Switch, HashRouter } from "react-router-dom"
 import * as serviceWorker from './serviceWorker'
 import Home from "./view/Home";
 import Header from './component/Header';
@@ -36,15 +36,19 @@ const App = () => {
   }, [])
   return (
     <>
-      <BrowserRouter>
-        <div className="container pt-4 d-flex flex-column" id="main-container">
-          <Header />
-          <main className="d-flex flex-column my-auto w-100" >
-            <Route path="/" exact component={Home} />
-          </main>
-        </div>
-        <Modal />
-      </BrowserRouter>
+      <HashRouter basename="/">
+        <BrowserRouter>
+          {/* <Switch> */}
+            <div className="container pt-4 d-flex flex-column" id="main-container">
+              <Header />
+              <main className="d-flex flex-column my-auto w-100" >
+                <Route path="/" exact component={Home} />
+              </main>
+            </div>
+          {/* </Switch> */}
+          <Modal />
+        </BrowserRouter>
+      </HashRouter>
     </>
   )
 }
