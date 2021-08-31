@@ -424,8 +424,8 @@ body {
 .forecast-items:first-child{
   font-weight: bold;
 }
-.forecast-items:nth-child(2){
-  border-left: 1px solid #dedede !important;
+.forecast-items:not(:last-child){
+  /* border-left: 1px solid #dedede !important; */
   border-right: 1px solid #dedede !important;
 }
 
