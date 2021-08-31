@@ -28,7 +28,7 @@ const Detail = () => {
             var h = (new Date()).getHours()
             setHourly(forecast[0].hour.slice(h, 24).concat(forecast[1].hour.slice(0, h)))
         }
-    }, [])
+    }, [forecast])
 
     return (
         <>
@@ -154,6 +154,7 @@ const Detail = () => {
                     </div>
                     <div className="d-flex flex-row" id="hourly-forecast" style={{ overflowX: "scroll", overflowY: "hidden" }}>
                         {
+                            // console.log(Hourly)
                             Hourly.map((hour) => (
                                 <div key={hour.time_epoch} className="d-flex align-items-center flex-column border-0 d-flex forecast-items" style={{ minWidth: "120px" }}>
                                     <div className="card-title" style={{ fontSize: "24px" }}>
