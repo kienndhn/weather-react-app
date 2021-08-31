@@ -17,8 +17,6 @@ const Current = () => {
         }, 161);
     }
 
-    useEffect(() => {
-    }, [location, current, forecastToday])
     return (
         <>
             {location && current && forecastToday &&

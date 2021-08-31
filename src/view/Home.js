@@ -5,6 +5,7 @@ import Forecast from '../component/Forecast'
 import Loading from '../component/Loading'
 import Message from '../component/Message'
 import Modal from '../component/Modal'
+import { getData } from '../redux/action/weather'
 // import { current } from '../redux/action/weather'
 
 function Home() {
@@ -12,17 +13,27 @@ function Home() {
     const dispatch = useDispatch()
 
     const weatherData = useSelector(state => state.weatherData)
-    const { current, loading, message, forecast } = weatherData
+    const { current} = weatherData
 
-    // useEffect(() => {
-    // }, [current])
+    useEffect(() => {
+        if (!current) {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((position) => {
+              const latitude = position.coords.latitude
+              const longtitude = position.coords.longitude
+              dispatch(getData(String(latitude) + "," + String(longtitude)))
+            })
+          }
+        }
+      }, [])
 
-
+      console.log("home re-render")
+      
     return (
         <>
             <div className="d-block mx-auto w-100" style={{ maxWidth: "500px" }}>
                 <div className="d-flex flex-column">
-                    {loading && <Loading />}
+                    <Loading />
                     <Message /> 
                     <Current />
                     <Forecast />

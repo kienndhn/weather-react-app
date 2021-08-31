@@ -26,13 +26,9 @@ const Detail = () => {
     useEffect(() => {
         if (forecast && forecast.length > 0) {
             var h = (new Date()).getHours()
-            // console.log(h)
-
             setHourly(forecast[0].hour.slice(h, 24).concat(forecast[1].hour.slice(0, h)))
-            console.log(Hourly)
         }
-        // console.log(Hourly)
-    }, [forecast])
+    }, [])
 
     return (
         <>

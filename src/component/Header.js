@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getData } from '../redux/action/weather'
 
@@ -9,15 +9,19 @@ const Header = () => {
     const [q, setQ] = useState('')
     const dispatch = useDispatch()
 
-    const search = (e) => {
-        e.preventDefault();
-        console.log(q)
-        if (q !== "") {
-            dispatch(getData(q))
-            setQ("")
-        }
-        // 
-    }
+    
+    const search = useCallback(
+        (e) => {
+            e.preventDefault();
+            // console.log(q)
+            if (q !== "") {
+                dispatch(getData(q))
+                setQ("")
+            }        // 
+        },
+        [q],
+    ) 
+
 
     return (
         <>
@@ -32,7 +36,7 @@ const Header = () => {
                                     className="form-control text-center border-0 search-input"
                                     placeholder="Search city"
                                     onChange={(e) => {
-                                        console.log(q)
+                                        // console.log(q)
                                         setQ(e.target.value)
                                     }} />
                             </form>
